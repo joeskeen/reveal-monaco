@@ -1,0 +1,32 @@
+{
+  "name": "reveal-monaco",
+  "version": "0.1.0-ALPHA-UNSTABLE",
+  "description": "A plugin for RevealJS to allow embedding the Monaco editor into presentations",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/joeskeen/reveal-monaco.git"
+  },
+  "keywords": [
+    "reveal",
+    "monaco",
+    "revealjs",
+    "reveal.js",
+    "monaco-editor",
+    "code",
+    "demo"
+  ],
+  "author": "Joe Skeen <http://github.com/joeskeen>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/joeskeen/reveal-monaco/issues"
+  },
+  "homepage": "https://github.com/joeskeen/reveal-monaco#readme",
+  "dependencies": {
+    "es6-promise": "^3.2.1",
+    "monaco-editor": "^0.5.1"
+  }
+}
