@@ -82,7 +82,7 @@ export class MonacoPlugin {
     if (state.currentSlide) {
       const codeBlock = state.currentSlide.querySelector(this.options.selector);
       if (codeBlock) {
-        const initialCode = codeBlock.innerText;
+        const initialCode = codeBlock.innerText.trimStart();
         codeBlock.innerHTML = "";
         const language =
           codeBlock.getAttribute("language") || this.options.defaultLanguage;
