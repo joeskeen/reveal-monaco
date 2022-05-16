@@ -44,6 +44,15 @@ A small plugin that allows you to use the Monaco Editor in your reveal.js presen
       </code></pre>
     </section>
     ```
+* You can use CSS to customize the appearance, for example: 
+    ```css
+    .reveal pre code.monaco {
+      min-height: 200px;
+      padding: 0;
+      padding-top: 3px;
+      background-color: white;
+    }
+    ```
 
 ## Requirements
 
