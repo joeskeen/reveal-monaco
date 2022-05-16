@@ -77,19 +77,29 @@ export class MonacoPlugin {
       const codeBlock = state.previousSlide.querySelector(
         this.options.selector
       );
-      if (codeBlock) {
-        if (this.activeEditor) {
-          const contents = this.activeEditor.getModel().getValue().trimStart();
-          codeBlock.innerText = contents;
-          this.activeEditor.dispose();
-          this.activeEditor = null;
-        }
+      if (codeBlock && this.activeEditor) {
+        const contents = this.activeEditor.getModel().getValue().trimStart();
+
+        this.activeEditor.dispose();
+        this.activeEditor = null;
+
+        const noscript = document.createElement("script");
+        noscript.setAttribute("type", "text/template");
+        noscript.innerHTML = contents;
+        codeBlock.appendChild(noscript);
       }
     }
     if (state.currentSlide) {
       const codeBlock = state.currentSlide.querySelector(this.options.selector);
       if (codeBlock) {
-        const initialCode = codeBlock.innerText.trimStart();
+        const scriptTemplateChild = codeBlock.querySelector(
+          "script[type='text/template']"
+        );
+        const initialCode = (
+          scriptTemplateChild
+            ? scriptTemplateChild.innerHTML
+            : codeBlock.innerHTML
+        ).trimStart();
         codeBlock.innerHTML = "";
         const language =
           codeBlock.getAttribute("language") || this.options.defaultLanguage;
