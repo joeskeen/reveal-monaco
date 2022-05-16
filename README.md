@@ -38,9 +38,9 @@ A small plugin that allows you to use the Monaco Editor in your reveal.js presen
       <h2>My Code</h2>
       <!-- specifying the language below is optional, will fall back to default -->
       <pre><code class="monaco" language="javascript">
-function helloWorld() {
-  console.log('hello, world!')
-}
+    function helloWorld() {
+      console.log('hello, world!')
+    }
       </code></pre>
     </section>
     ```
