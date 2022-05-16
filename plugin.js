@@ -72,7 +72,7 @@ export class MonacoPlugin {
       );
       if (codeBlock) {
         if (this.activeEditor) {
-          const contents = this.activeEditor.getModel().getValue();
+          const contents = this.activeEditor.getModel().getValue().trimStart();
           codeBlock.innerText = contents;
           this.activeEditor.dispose();
           this.activeEditor = null;
