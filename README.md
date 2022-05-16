@@ -57,3 +57,50 @@ A small plugin that allows you to use the Monaco Editor in your reveal.js presen
 ## Requirements
 
 Requires a browser capable of loading ECMAScript modules (no IE support)
+
+## Troubleshooting
+
+If your code isn't displaying correctly, try wrapping it in `<script type="text/template">...</script>`. The plugin will automatically unwrap the contents of that tag before passing it to the Monaco Editor.
+
+```html
+<section data-auto-animate>
+  <h2>My Code</h2>
+  <pre><code class="monaco" language="javascript"><script type="text/template">
+import React, { useState } from 'react';
+
+function Example() {
+	const [count, setCount] = useState(0);
+
+	return (
+		<div>
+			<p>You clicked {count} times</p>
+			<button onClick={() => setCount(count + 1)}>
+				Click me
+			</button>
+		</div>
+	);
+}
+
+function SecondExample() {
+	const [count, setCount] = useState(0);
+
+	return (
+		<div>
+			<p>You clicked {count} times</p>
+			<button onClick={() => setCount(count + 1)}>
+				Click me
+			</button>
+		</div>
+	);
+}
+  </script></code></pre>
+</section>
+```
+
+### Using reveal-monaco plugin with highlight plugin
+
+There is a workaround if you would like to use both the built-in Highlight plugin with the Monaco Editor plugin that allows each to work side-by-side:
+
+* Open all the source code files for the highlight plugin
+* Find `pre code` and replace it with `pre code.hljs`
+* Now any code blocks tagged with the `hljs` class will use the Highlight plugin, and code blocks tagged with `monaco` will use the Monaco plugin.
