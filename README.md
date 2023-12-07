@@ -36,7 +36,8 @@ A small plugin that allows you to use the Monaco Editor in your reveal.js presen
     ```html
     <section>
       <h2>My Code</h2>
-      <!-- specifying the language below is optional, will fall back to default -->
+      <!-- specifying the language below is optional, will fall back to default 
+          (attribute name 'data-language' will also work as an alternative for valid HTML) -->
       <pre><code class="monaco" language="javascript">
     function helloWorld() {
       console.log('hello, world!')
