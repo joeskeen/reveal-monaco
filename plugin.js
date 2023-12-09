@@ -104,8 +104,9 @@ export class MonacoPlugin {
         const language =
           codeBlock.getAttribute("language") || codeBlock.getAttribute("data-language") || this.options.defaultLanguage;
         this.activeEditor = this.monaco.editor.create(codeBlock, {
+          ...this.options.editorOptions,
           value: initialCode,
-          language: language,
+          language: language
         });
       }
     }

@@ -16,7 +16,11 @@ A small plugin that allows you to use the Monaco Editor in your reveal.js presen
         hash: true,
 
         monaco: {
-          defaultLanguage: 'python' // optional, defaults to 'javascript'
+          defaultLanguage: 'python', // optional, defaults to 'javascript'
+          editorOptions: { // optional monaco options as per https://microsoft.github.io/monaco-editor/typedoc/variables/editor.EditorOptions.html
+            automaticLayout: true,
+             // ...
+          }
         },
 
         // Learn about plugins: https://revealjs.com/plugins/
