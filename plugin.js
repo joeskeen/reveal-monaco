@@ -102,7 +102,7 @@ export class MonacoPlugin {
         ).trimStart();
         codeBlock.innerHTML = "";
         const language =
-          codeBlock.getAttribute("language") || this.options.defaultLanguage;
+          codeBlock.getAttribute("language") || codeBlock.getAttribute("data-language") || this.options.defaultLanguage;
         this.activeEditor = this.monaco.editor.create(codeBlock, {
           ...this.options.editorOptions,
           value: initialCode,
