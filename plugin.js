@@ -108,6 +108,13 @@ export class MonacoPlugin {
           value: initialCode,
           language: language
         });
+
+        this.activeEditor.getModel().onDidChangeContent(e => {
+          const contentChangeEvent = new CustomEvent("reveal-monaco-content-change", { detail: { textContent: this.activeEditor.getModel().getValue() } });
+          window.dispatchEvent(contentChangeEvent);
+        });
+        // dispatch event for initial display of the editor
+        window.dispatchEvent(new CustomEvent("reveal-monaco-content-change", { detail: { textContent: this.activeEditor.getModel().getValue() } }));
       }
     }
   }
