@@ -58,6 +58,12 @@ A small plugin that allows you to use the Monaco Editor in your reveal.js presen
       background-color: white;
     }
     ```
+* To access editor contents, you can listen to the `reveal-monaco-content-change` event:
+    ```javascript
+    window.addEventListener("reveal-monaco-content-change", (event) => {
+      let codeValue = event.detail.textContent;
+    });
+    ```
 
 ## Requirements
 
